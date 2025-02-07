@@ -14,10 +14,10 @@ with col1:
     Weight=st.text_input("Enter your weight:")
     BMI=st.text_input("Enter you BMI:")
 
-    with open(r"C:\Users\my pc\diabtes_2.dill","rb") as f:
+    with open("diabtes_2.dill","rb") as f:
         model=dill.load(f)
 with col2:
-    st.image(r"F:\obesity.png")
+    st.image(r"obesity.png")
 
 if st.button("Predict"):
     data=[[Age,Gender,Height,Weight,BMI]]
