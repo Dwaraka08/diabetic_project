@@ -21,7 +21,7 @@ with col2:
 
 if st.button("Predict"):
     data=[[Age,Gender,Height,Weight,BMI]]
-    data_array=np.array(data,dtype=float).reshape(1,-1)
+    data_array=np.array(data).reshape(1,-1)
     prediction=model.predict(data_array)
     if prediction==0:
         st.write("Normal Weight")
