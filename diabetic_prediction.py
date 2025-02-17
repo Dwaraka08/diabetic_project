@@ -20,9 +20,14 @@ with col2:
     st.image(r"obesity.png")
 
 if st.button("Predict"):
-    data=[[Age,Gender,Height,Weight,BMI]]
-    data_array=np.array(data,dtype=float).reshape(1,-1)
-    prediction=model.predict(data_array)
+    
+    data = np.array([
+            float(Pregnancies), float(Glucose), float(BloodPressure),
+            float(SkinThickness), float(Insulin), float(BMI),
+            float(DiabetesPedigreeFunction), float(Age)
+        ]).reshape(1, -1)
+
+    prediction=model.predict(data)
     if prediction==0:
         st.write("Normal Weight")
     elif prediction==1:
