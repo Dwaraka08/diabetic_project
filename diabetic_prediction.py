@@ -21,11 +21,8 @@ with col2:
 
 if st.button("Predict"):
     
-    data = np.array([
-            float(Pregnancies), float(Glucose), float(BloodPressure),
-            float(SkinThickness), float(Insulin), float(BMI),
-            float(DiabetesPedigreeFunction), float(Age)
-        ]).reshape(1, -1)
+   data=[[Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,Diabatespedigreefunction,Age]]
+   data_array=np.array(data,dtype=numeric).reshape(1,-1)
 
     prediction=model.predict(data)
     if prediction==0:
